@@ -54,6 +54,7 @@ var Counter = React.createClass({
 
 	shouldComponentUpdate: function() {
 		console.log('shouldComponentUpdate - ta metoda jest wywoływana w fazie aktualizacji przed metodą render. Pozwala sprawdzić, czy konieczne jest przerysowanie komponentu. Pozwala to zoptymalizować aplikację - operacje na DOM zużywają dużo zasobów.');
+		return true;
 	},
 
 	componentWillUpdate: function() {
