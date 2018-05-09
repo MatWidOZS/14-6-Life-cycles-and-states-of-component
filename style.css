@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:700');
+
+* {box-sizing: border-box;}
+
+button {
+	display: block;
+	margin: 20px auto;
+	border: none;
+	padding: 10px;
+	width: 130px;
+	background: #fff;
+	cursor: pointer;
+	border-radius: 10px;
+	font-size: 18px;
+	font-family: 'Raleway', sans-serif;
+}
+
+span {
+	display: block;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
+}
+
+.increment {
+	border: 2px solid #1A9706;
+	transition: .4s;
+}
+
+.increment:hover {
+	background: #4CD137;
+	color: #fff;
+}
+
+.decrement {
+	border: 2px solid #960004;
+	transition: .4s;
+}
+
+.decrement:hover {
+	background: #EA2025;
+	color: #fff;
+}
