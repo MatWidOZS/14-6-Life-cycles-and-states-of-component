@@ -27,9 +27,9 @@ var Counter = React.createClass({
 		return React.createElement('div', {},
 			React.createElement('button', {className: 'increment', onClick: this.increment}, "Increment"),
 			React.createElement('button', {className: 'decrement', onClick: this.decrement}, "Decrement"),
-			React.createElement('span', {}, 'Pierwszy licznik: ' + this.state.firstCounter),
-			React.createElement('span', {}, 'Drugi licznik: ' + this.state.secondCounter),
-			React.createElement('span', {}, 'Trzeci licznik: ' + this.state.thirdCounter)
+			React.createElement('span', {}, 'First counter: ' + this.state.firstCounter),
+			React.createElement('span', {}, 'Second counter: ' + this.state.secondCounter),
+			React.createElement('span', {}, 'Third counter: ' + this.state.thirdCounter)
 		);
 	}
 });
