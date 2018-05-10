@@ -2,9 +2,20 @@
 
 * {box-sizing: border-box;}
 
+.container {
+	background: #ecf0f1;
+	padding: 20px;
+	width: 400px;
+	height: 200px;
+	margin: 10px auto;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: center;
+}
+
 button {
-	display: block;
-	margin: 20px auto;
+	margin: 20px;
 	border: none;
 	padding: 10px;
 	width: 130px;
@@ -16,7 +27,6 @@ button {
 }
 
 span {
-	display: block;
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
 	font-size: 25px;
