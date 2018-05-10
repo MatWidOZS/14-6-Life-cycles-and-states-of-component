@@ -1,4 +1,4 @@
-var FirstCounter = React.createClass({
+var Counter = React.createClass({
 	getDefaultProps: function() {
 		console.log('getDefaultProps - Dodanie domyślnych wartości propsów, które nie zostały przekazane do komponentu');
 	},
@@ -62,98 +62,14 @@ var FirstCounter = React.createClass({
 	}
 });
 
-var SecondCounter = React.createClass({
-	getInitialState: function() {
-		return {
-			counter: 0
-		};
-	},
-
-	increment: function() {
-		this.setState({
-			counter: this.state.counter + 1
-		});
-	},
-
-	decrement: function() {
-		this.setState({
-			counter: this.state.counter - 1
-		});
-	},
-
-	render: function() {
-		return React.createElement('div', {className: 'container'},
-			React.createElement('button', {className: 'increment', onClick: this.increment}, "Increment"),
-			React.createElement('button', {className: 'decrement', onClick: this.decrement}, "Decrement"),
-			React.createElement('span', {}, 'Second Counter: ' + this.state.counter)
-		);
-	}
-});
-
-var ThirdCounter = React.createClass({
-	getInitialState: function() {
-		return {
-			counter: 0
-		};
-	},
-
-	increment: function() {
-		this.setState({
-			counter: this.state.counter + 1
-		});
-	},
-
-	decrement: function() {
-		this.setState({
-			counter: this.state.counter - 1
-		});
-	},
-
-	render: function() {
-		return React.createElement('div', {className: 'container'},
-			React.createElement('button', {className: 'increment', onClick: this.increment}, "Increment"),
-			React.createElement('button', {className: 'decrement', onClick: this.decrement}, "Decrement"),
-			React.createElement('span', {}, 'Third Counter: ' + this.state.counter)
-		);
-	}
-});
-
-var FourthCounter = React.createClass({
-	getInitialState: function() {
-		return {
-			counter: 0
-		};
-	},
-
-	increment: function() {
-		this.setState({
-			counter: this.state.counter + 1
-		});
-	},
-
-	decrement: function() {
-		this.setState({
-			counter: this.state.counter - 1
-		});
-	},
-
-	render: function() {
-		return React.createElement('div', {className: 'container'},
-			React.createElement('button', {className: 'increment', onClick: this.increment}, "Increment"),
-			React.createElement('button', {className: 'decrement', onClick: this.decrement}, "Decrement"),
-			React.createElement('span', {}, 'Fourth Counter: ' + this.state.counter)
-		);
-	}
-});
-
 var App = React.createClass({
 	render: function() {
 		return (
 			React.createElement('div', {},
-				React.createElement(FirstCounter, {}),
-				React.createElement(SecondCounter, {}),
-				React.createElement(ThirdCounter, {}),
-				React.createElement(FourthCounter, {})
+				React.createElement(Counter, {}),
+				React.createElement(Counter, {}),
+				React.createElement(Counter, {}),
+				React.createElement(Counter, {})
 			)
 		);
 	}
