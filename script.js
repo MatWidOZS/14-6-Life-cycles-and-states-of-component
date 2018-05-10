@@ -1,4 +1,4 @@
-var Counter = React.createClass({
+var FirstCounter = React.createClass({
 	getDefaultProps: function() {
 		console.log('getDefaultProps - Dodanie domyślnych wartości propsów, które nie zostały przekazane do komponentu');
 	},
@@ -6,26 +6,20 @@ var Counter = React.createClass({
 	getInitialState: function() {
 		console.log('getInitialState - określanie początkowego stanu komponentu');
 		return {
-			firstCounter: 0,
-			secondCounter: 5,
-			thirdCounter: -3.5
+			counter: 0
 		};
 		console.log('getInitialState - określanie początkowego stanu komponentu');
 	},
 
 	increment: function() {
 		this.setState({
-			firstCounter: this.state.firstCounter + 1,
-			secondCounter: this.state.secondCounter + 1,
-			thirdCounter: this.state.thirdCounter + 1
+			counter: this.state.counter + 1
 		});
 	},
 
 	decrement: function() {
 		this.setState({
-			firstCounter: this.state.firstCounter - 1,
-			secondCounter: this.state.secondCounter - 1,
-			thirdCounter: this.state.thirdCounter - 1
+			counter: this.state.counter - 1
 		});
 	},
 
@@ -35,12 +29,10 @@ var Counter = React.createClass({
 
 	render: function() {
 		console.log('render - zwraca potrzebny do wyświetlenia ReactElement');
-		return React.createElement('div', {},
+		return React.createElement('div', {className: 'container'},
 			React.createElement('button', {className: 'increment', onClick: this.increment}, "Increment"),
 			React.createElement('button', {className: 'decrement', onClick: this.decrement}, "Decrement"),
-			React.createElement('span', {}, 'First counter: ' + this.state.firstCounter),
-			React.createElement('span', {}, 'Second counter: ' + this.state.secondCounter),
-			React.createElement('span', {}, 'Third counter: ' + this.state.thirdCounter)
+			React.createElement('span', {}, 'First Counter: ' + this.state.counter)
 		);
 	},
 
@@ -70,5 +62,102 @@ var Counter = React.createClass({
 	}
 });
 
-var element = React.createElement(Counter);
-ReactDOM.render(element, document.getElementById('app'));
+var SecondCounter = React.createClass({
+	getInitialState: function() {
+		return {
+			counter: 0
+		};
+	},
+
+	increment: function() {
+		this.setState({
+			counter: this.state.counter + 1
+		});
+	},
+
+	decrement: function() {
+		this.setState({
+			counter: this.state.counter - 1
+		});
+	},
+
+	render: function() {
+		return React.createElement('div', {className: 'container'},
+			React.createElement('button', {className: 'increment', onClick: this.increment}, "Increment"),
+			React.createElement('button', {className: 'decrement', onClick: this.decrement}, "Decrement"),
+			React.createElement('span', {}, 'Second Counter: ' + this.state.counter)
+		);
+	}
+});
+
+var ThirdCounter = React.createClass({
+	getInitialState: function() {
+		return {
+			counter: 0
+		};
+	},
+
+	increment: function() {
+		this.setState({
+			counter: this.state.counter + 1
+		});
+	},
+
+	decrement: function() {
+		this.setState({
+			counter: this.state.counter - 1
+		});
+	},
+
+	render: function() {
+		return React.createElement('div', {className: 'container'},
+			React.createElement('button', {className: 'increment', onClick: this.increment}, "Increment"),
+			React.createElement('button', {className: 'decrement', onClick: this.decrement}, "Decrement"),
+			React.createElement('span', {}, 'Third Counter: ' + this.state.counter)
+		);
+	}
+});
+
+var FourthCounter = React.createClass({
+	getInitialState: function() {
+		return {
+			counter: 0
+		};
+	},
+
+	increment: function() {
+		this.setState({
+			counter: this.state.counter + 1
+		});
+	},
+
+	decrement: function() {
+		this.setState({
+			counter: this.state.counter - 1
+		});
+	},
+
+	render: function() {
+		return React.createElement('div', {className: 'container'},
+			React.createElement('button', {className: 'increment', onClick: this.increment}, "Increment"),
+			React.createElement('button', {className: 'decrement', onClick: this.decrement}, "Decrement"),
+			React.createElement('span', {}, 'Fourth Counter: ' + this.state.counter)
+		);
+	}
+});
+
+var App = React.createClass({
+	render: function() {
+		return (
+			React.createElement('div', {},
+				React.createElement(FirstCounter, {}),
+				React.createElement(SecondCounter, {}),
+				React.createElement(ThirdCounter, {}),
+				React.createElement(FourthCounter, {})
+			)
+		);
+	}
+});
+
+var app = React.createElement(App);
+ReactDOM.render(app, document.getElementById('app'));
